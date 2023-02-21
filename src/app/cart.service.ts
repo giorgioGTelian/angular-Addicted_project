@@ -24,4 +24,7 @@ clearCart() {
 constructor(
   private http: HttpClient
 ) {}
+getShippingPrices() {
+  return this.http.get<{type: string, price: number}[]>('/assets/shipping.json');
+}
 }
