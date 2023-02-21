@@ -21,4 +21,7 @@ clearCart() {
   return this.items;
 }
 /* ... */
+constructor(
+  private http: HttpClient
+) {}
 }
