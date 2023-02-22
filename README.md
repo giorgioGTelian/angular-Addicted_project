@@ -1,7 +1,7 @@
 # angular-Addicted_project
 
 ##to test immdiately it you can use:
-[Live DEMO on stack blitz ⚡️](https://stackblitz.com/edit/angular-igxrac?file=src%2Fapp%2Fcart%2Fcart.component.ts,src%2Fapp%2Fcart%2Fcart.component.html,src%2Fapp%2Fproduct-details%2Fproduct-details.component.ts)
+[Live DEMO on stack blitz ⚡️](https://stackblitz.com/edit/angular-igxrac?file=README.md)
 
 
 ##or you can dowload the repo and follow this steps:
