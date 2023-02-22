@@ -43,7 +43,7 @@ export class ProductDetailsComponent implements OnInit {
     if (index !== -1) {
       products.splice(index, 1);
       window.alert('Product has been deleted!');
-      this.router.navigateByUrl('/products');
+      this.router.navigateByUrl('/');
     }
   }
 
