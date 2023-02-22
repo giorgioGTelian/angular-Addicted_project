@@ -4,7 +4,7 @@
 [Live DEMO on stack blitz ⚡️](https://stackblitz.com/edit/angular-igxrac?file=README.md)
 
 
-## Or you can dowload the repo and follow this steps:
+## Or you can download the repo and follow this steps:
 
 ### Start a localhost service
 
