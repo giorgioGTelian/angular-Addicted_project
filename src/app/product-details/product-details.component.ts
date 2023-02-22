@@ -39,6 +39,7 @@ export class ProductDetailsComponent implements OnInit {
   deleteProduct(product: Product): void {
     // Remove the product from the products array
     products.splice(products.indexOf(product), 1);
+    window.alert('Product has been deleted!');
   }
 
   modifyProduct() {
