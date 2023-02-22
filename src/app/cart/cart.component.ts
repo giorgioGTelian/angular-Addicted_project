@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { products, Product } from '../products';
+import { Router } from '@angular/router';
 
 import { CartService } from '../cart.service';
 
@@ -25,7 +26,7 @@ export class CartComponent {
   
   checkoutForm: FormGroup;
 
-  constructor(private formBuilder: FormBuilder) {
+  constructor(private formBuilder: FormBuilder, private router: Router) {
     this.checkoutForm = this.formBuilder.group({
       name: '',
       price: '',
@@ -47,6 +48,10 @@ export class CartComponent {
 
     // Clear the form
     this.checkoutForm.reset();
+  }
+
+  goBack(): void {
+    this.router.navigate(['/']); 
   }
 }
 

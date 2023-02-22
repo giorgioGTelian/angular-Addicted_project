@@ -60,7 +60,7 @@ export class ProductDetailsComponent implements OnInit {
     this.showEditForm = false;
   }
 
-
+  
   
 
 }
