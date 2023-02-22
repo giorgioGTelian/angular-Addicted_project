@@ -1,12 +1,12 @@
 # angular-Addicted_project
 
-##to test immdiately it you can use:
+## To test immdiately it you can use:
 [Live DEMO on stack blitz ⚡️](https://stackblitz.com/edit/angular-igxrac?file=README.md)
 
 
-##or you can dowload the repo and follow this steps:
+## Or you can dowload the repo and follow this steps:
 
-###start a localhost service
+### Start a localhost service
 
 
 Static file server which returns files regardless of the header method
