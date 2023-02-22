@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { products, Product } from '../products';
 
 import { CartService } from '../cart.service';
@@ -12,25 +12,43 @@ import { CartService } from '../cart.service';
 })
 
 export class CartComponent {
+  items: Product[] = [];
+  /* . . . */
+  
+    addToCart(product: Product) {
+      this.items.push(product);
+    }
+  
+    getItems() {
+      return this.items;
+    }
+  
+  checkoutForm: FormGroup;
 
-  items = this.cartService.getItems();
-
-  checkoutForm = this.formBuilder.group({
-    name: '',
-    address: ''
-  });
-
-
-  constructor(
-    private cartService: CartService,
-    private formBuilder: FormBuilder,
-  ) { }
+  constructor(private formBuilder: FormBuilder) {
+    this.checkoutForm = this.formBuilder.group({
+      name: '',
+      price: '',
+      description: ''
+    });
+  }
 
   onSubmit(): void {
-    // Process checkout data here
-    this.items = this.cartService.clearCart();
-    console.warn('Your order has been submitted', this.checkoutForm.value);
+    // Create a new product object with the form values
+    const newProduct: Product = {
+      id: products.length + 1,
+      name: this.checkoutForm.value.name,
+      price: this.checkoutForm.value.price,
+      description: this.checkoutForm.value.description
+    };
+
+    // Add the new product to the products array
+    products.push(newProduct);
+
+    // Clear the form
     this.checkoutForm.reset();
   }
-  
 }
+
+
+
