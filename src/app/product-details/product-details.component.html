@@ -4,6 +4,29 @@
   <h3>{{ product.name }}</h3>
   <h4>{{ product.price | currency }}</h4>
   <p>{{ product.description }}</p>
-  <button type="button" (click)="addToCart(product)">Modify</button>
+  <button type="button" (click)="modifyProduct()">Modify</button>
   <button type="button" (click)="deleteProduct(product)">Delete</button>
 </div>
+
+<div *ngIf="showEditForm">
+  <h3>Edit Product</h3>
+  <form (submit)="saveProduct()">
+    <div>
+      <label for="name">Name</label>
+      <input *ngIf="product" type="text" id="name" [(ngModel)]="product.name" name="name">
+    </div>
+    <div>
+      <label for="price">Price</label>
+      <input *ngIf="product" type="number" id="price" [(ngModel)]="product.price" name="price">
+    </div>
+    <div>
+      <label for="description">Description</label>
+      <textarea *ngIf="product" id="description" [(ngModel)]="product.description" name="description"></textarea>
+    </div>
+    <button type="submit">Save</button>
+    <button type="button" (click)="cancelEdit()">Cancel</button>
+  </form>
+</div>
+
+
+

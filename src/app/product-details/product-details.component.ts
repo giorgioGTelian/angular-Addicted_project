@@ -13,6 +13,8 @@ import { CartService } from '../cart.service';
 export class ProductDetailsComponent implements OnInit {
 
   product: Product | undefined;
+  showEditForm = false;
+
 
   constructor(
     private route: ActivatedRoute,
@@ -37,6 +39,19 @@ export class ProductDetailsComponent implements OnInit {
   deleteProduct(product: Product): void {
     // Remove the product from the products array
     products.splice(products.indexOf(product), 1);
+  }
+
+  modifyProduct() {
+    this.showEditForm = true;
+  }
+
+  saveProduct() {
+    this.showEditForm = false;
+    window.alert('Product has been modified!');
+  }
+
+  cancelEdit() {
+    this.showEditForm = false;
   }
 
 
