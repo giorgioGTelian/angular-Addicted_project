@@ -14,16 +14,22 @@ Description: {{ product.description }}
 </p>
 
 <a
-      [title]="product.name + ' details'"
-      [routerLink]="['/products', product.id]">
+[title]="product.name + ' details'"
+[routerLink]="['/products', product.id]">
+
 <button type="button" (click)="share()">
-Create product
+Modify product
 </button>
 </a>
 
 
+</div>
+
+<div *ngFor="let product of products">
+
 
 </div>
+
 
 <!-- 
 Copyright Google LLC. All Rights Reserved.

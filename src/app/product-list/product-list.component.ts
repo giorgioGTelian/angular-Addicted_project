@@ -12,7 +12,7 @@ export class ProductListComponent {
   products = [...products];
 
   share() {
-    window.alert('You are about to add a new product!');
+    window.alert('You are about to modify a product!');
   }
 
   onNotify() {
