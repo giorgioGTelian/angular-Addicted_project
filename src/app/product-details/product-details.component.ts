@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 import { Product, products } from '../products';
 import { CartService } from '../cart.service';
@@ -18,10 +18,11 @@ export class ProductDetailsComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private cartService: CartService
+    private cartService: CartService,
+    private router: Router
     ) { }
 
-
+    //if we want to implement carts:
     addToCart(product: Product) {
       this.cartService.addToCart(product);
       window.alert('Your product has been added to the cart!');
@@ -38,8 +39,12 @@ export class ProductDetailsComponent implements OnInit {
   }
   deleteProduct(product: Product): void {
     // Remove the product from the products array
-    products.splice(products.indexOf(product), 1);
-    window.alert('Product has been deleted!');
+    const index = products.indexOf(product);
+    if (index !== -1) {
+      products.splice(index, 1);
+      window.alert('Product has been deleted!');
+      this.router.navigateByUrl('/products');
+    }
   }
 
   modifyProduct() {
